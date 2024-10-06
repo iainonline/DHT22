@@ -25,7 +25,9 @@ file.write("humidity, temperature, time\n")
 
 while True:
     if device == 'pizero':
-
+        # read the humidity and temperature from the sensor
+        humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
+        
     if device == 'laptop':
         # create a random number for humidity and temperature within 1 degree of the previous value
         humidity = humidity + (1 - 2 * (time.time() % 2))
